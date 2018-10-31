@@ -1,0 +1,18 @@
+
+
+Dibuat oleh satu orang dengan akun root
+Create the application user and password:
+	Logon to MySQL using root user
+	Create the counter database >>> CREATE DATABASE counter;
+	Give privileges to counter user >>> CREATE USER 'counter_user'@'%' IDENTIFIED BY 'counter_password';
+	Create the counter user >>> GRANT ALL PRIVILEGES ON counter.* TO 'counter_user'@'%'; and FLUSH PRIVILEGES;
+
+Create a virtualenv >>> py -m venv venv
+Activate the virtualenv >>> venv/Scripts/activate
+Install the packages >>> pip install -r requirements.txt
+Run >>> flask db init <<< to initialize migrations
+Run >>> flask db migrate <<< and >>> flask db upgrade <<< to create tables
+Run >>> flask run
+Open >>> http://localhost:5000 on your browser
+To open a shell, just do >>> flask shell
+Run tests by doing >>> python tests.py
